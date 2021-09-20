@@ -270,6 +270,7 @@ ul {
 }
 
 #bigPortrait img {
+  height: 100%;
   margin: 0 auto;
 }
 
@@ -329,8 +330,5 @@ ul {
   }
   #main {
     margin-top: 60px;
-  }
-  #bigPortrait {
-    height: fit-content;
   }
 }

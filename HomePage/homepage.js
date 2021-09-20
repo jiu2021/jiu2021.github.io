@@ -46,18 +46,8 @@ var app = new Vue({
       }
 
     },
-
-    isQQbrowser: function() {
-      let reg = /^(.)*chrome((?!qqbrowser).)*$/
-      if (reg.test(navigator.userAgent.toLowerCase())) {
-        return false;
-      } else {
-        return true;
-      }
-    },
-
     Tip: function() {
       alert(' Thank you for your support!This page will be online soon!');
-    }
+    },
   }
 })
