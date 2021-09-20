@@ -330,4 +330,7 @@ ul {
   #main {
     margin-top: 60px;
   }
+  #bigPortrait {
+    height: fit-content;
+  }
 }
