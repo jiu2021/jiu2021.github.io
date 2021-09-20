@@ -45,6 +45,19 @@ var app = new Vue({
         menuBar.style.left = '-50%';
       }
 
+    },
+
+    isQQbrowser: function() {
+      let reg = /^(.)*chrome((?!qqbrowser).)*$/
+      if (reg.test(navigator.userAgent.toLowerCase())) {
+        return false;
+      } else {
+        return true;
+      }
+    },
+
+    Tip: function() {
+      alert(' Thank you for your support!This page will be online soon!');
     }
   }
 })

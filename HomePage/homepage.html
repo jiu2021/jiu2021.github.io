@@ -108,10 +108,10 @@
         </div>
       </div>
       <!--导航-->
-      <div id="menu" :class="{mobile :isMobile}">
+      <div id="menu" :class="{mobile :isMobile}" >
               <div id="menuTitle">Navigation</div>
               <div id="idCard">
-                <div id="bigPortrait">
+                <div id="bigPortrait" :class = "{QQbrowser:isQQbrowser()}">
                   <img src="homepageImages/portrait.jpg" width="60%" />
                 </div>
                 <div id="name"><span>Kai Jian</span></div>
@@ -147,7 +147,7 @@
                 <ul>
                   <li @click="showPage = 'blogPage',getBack()">blogs</li>
                   <li @click="showPage = 'programPage',getBack()">programs</li>
-                  <li>coming soon</li>
+                  <li @click="Tip()">coming soon</li>
                   <li @click="getBack()">←back</li>
                 </ul>
               </div>
