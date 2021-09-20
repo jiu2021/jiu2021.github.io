@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pages for KJ</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    
+    #homepage {
+      position: relative;
+      overflow: hidden;
+      opacity: 0.8;
+    }
+    
+    img {
+      width: 100%;
+      background-color: whitesmoke;
+    }
+    
+    #window {
+      display: flex;
+      flex-flow: column;
+      width: 600px;
+      height: 250px;
+      background-color: white;
+      position: absolute;
+      top: 230px;
+      left: 750px;
+      border-radius: 10px;
+      opacity: 0.8;
+    }
+    
+    #window span {
+      margin: 30px auto;
+      font-size: 50px;
+      color: black;
+    }
+    
+    #window a {
+      cursor: pointer;
+      text-decoration: none;
+      font-size: 40px;
+      margin-left: 50px;
+      margin-right: 60px;
+      border: black solid 2px;
+      border-radius: 5px;
+      color: black;
+    }
+    
+    #dot {
+      margin-top: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="homepage">
+    <img src="indexImages/background.jpg" />
+    <div id="window">
+      <span>Welcome to my page!</span>
+      <a href="HomePage/homepage.html">Click here to continue
+          <span id="dot">.</span>
+        </a>
+    </div>
+  </div>
+  <script>
+    window.onload = function() {
+      setInterval(() => {
+        var dot = document.getElementById("dot");
+        if (dot.innerHTML == ".") {
+          dot.innerHTML = "..";
+        } else if (dot.innerHTML == "..") {
+          dot.innerHTML = "...";
+        } else if (dot.innerHTML == "...") {
+          dot.innerHTML = ".";
+        }
+      }, 500);
+    };
+  </script>
+</body>
+
+</html>
