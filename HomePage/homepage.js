@@ -4,6 +4,7 @@ var app = new Vue({
     showPage: "blogPage",
     isShowMenu: false,
     isMobile: false,
+    showTag: "全部",
   },
 
   mounted: function() {
