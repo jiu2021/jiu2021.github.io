@@ -11,7 +11,7 @@
 
 <body>
   <!--KJ的博客-->
-  <!--写得很拉，毫无拓展性，轻扒-->
+  <!--写得很拉，轻扒-->
   <!--源码均已上传github-->
   <div id="app">
     <!--内容-->
@@ -41,20 +41,36 @@
         </div>
       </div>
       <div id="main">
+        <div id="blogRead" v-show="showPage == 'readMorePage'">
+        </div>
         <div id="blogPage" v-show="showPage == 'blogPage'">
           <div id="tags">
             <div class="tag">
               <div class="tagName">非技术</div>
               <div class="tagNum">|1</div>
             </div>
+            <div class="tag">
+              <div class="tagName">技术</div>
+              <div class="tagNum">|1</div>
+            </div>
           </div>
           <div class="blogs">
-            <div class="blogTitle">First blog</div>
+            <div class="blogTitle">First-blog</div>
             <div class="tagsName">
               <div class="tagName">非技术</div>
             </div>
             <div class="read">
-              <a href="marked.html" class="getRead">READ MORE</a>
+              <div class="getRead" @click="showBlog('First-blog')">Read more</div>
+              <div class="writeTime">2021-9-19</div>
+            </div>
+          </div>
+          <div class="blogs">
+            <div class="blogTitle">Git-notes</div>
+            <div class="tagsName">
+              <div class="tagName">技术</div>
+            </div>
+            <div class="read">
+              <div class="getRead" @click="showBlog('Git-notes')">Read more</div>
               <div class="writeTime">2021-9-19</div>
             </div>
           </div>
@@ -67,20 +83,19 @@
             </div>
             <div class="read">
               <div class="getTry">
-                <a href="./programs/todo-vue/todo-vue.html" target="_blank">GET TRY</a
-                  >
-                </div>
-                <div class="writeTime">2021-9-19</div>
+                <a href="./programs/todo-vue/todo-vue.html" target="_blank">Try it</a>
               </div>
+              <div class="writeTime">2021-9-19</div>
             </div>
-            <div class="programs">
-              <div class="programTitle">Cloud music</div>
-              <div class="instruction">
-                一个轻量化的Web应用。支持在线搜索，歌手、歌曲等，在线播放音乐，显示热评。（资源来自网易云，移动端暂不兼容）
-              </div>
-              <div class="read">
-                <div class="getTry">
-                  <a href="./programs/music-player/Player.html" target="_blank">GET TRY</a
+          </div>
+          <div class="programs">
+            <div class="programTitle">Cloud music</div>
+            <div class="instruction">
+              一个轻量化的Web应用。支持在线搜索，歌手、歌曲等，在线播放音乐，显示热评。（资源来自网易云，移动端暂不兼容）
+            </div>
+            <div class="read">
+              <div class="getTry">
+                <a href="./programs/music-player/Player.html" target="_blank">Try it</a
                     >
                   </div>
                   <div class="writeTime">2021-9-20</div>
@@ -93,7 +108,7 @@
               </div>
               <div class="read">
                 <div class="getTry">
-                  <a href="./programs/catchme/catchme.html" target="_blank">GET TRY</a
+                  <a href="./programs/catchme/catchme.html" target="_blank">Try it</a
                     >
                   </div>
                   <div class="writeTime">2021-9-20</div>
@@ -107,7 +122,7 @@
             <div id="powered">Powered by github pages</div>
         </div>
       </div>
-      <!--导航-->
+    <!--导航-->
     <div id="menu" :class="{mobile :isMobile}" >
               <div id="menuTitle">Navigation</div>
               <div id="idCard">
@@ -160,5 +175,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script src="homepage.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   </body>
 </html>

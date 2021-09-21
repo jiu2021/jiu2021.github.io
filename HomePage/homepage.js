@@ -50,5 +50,31 @@ var app = new Vue({
     Tip: function() {
       alert(' Thank you for your support!This page will be online soon!');
     },
+
+    showBlog: function(blogName) {
+      var xmlhttp;
+      if (window.XMLHttpRequest) {
+        xmlhttp = new XMLHttpRequest();
+      } else {
+        xmlhttp = new ActiveXObject("Microsoft.XMLHttp");
+      }
+      xmlhttp.onreadystatechange = function() {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+          document.getElementById("blogRead").innerHTML = marked(
+            xmlhttp.responseText
+          );
+        }
+      };
+      // 向服务器发送请求
+      if (blogName == "Git-notes") {
+        xmlhttp.open("GET", "markdowns/Git-notes.md", true);
+        xmlhttp.send();
+      } else if (blogName == "First-blog") {
+        xmlhttp.open("GET", "markdowns/First-blog.md", true);
+        xmlhttp.send();
+      }
+      this.showPage = "readMorePage";
+    }
+
   }
 })
