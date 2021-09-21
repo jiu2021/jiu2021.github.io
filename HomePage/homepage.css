@@ -47,12 +47,37 @@ ul {
   box-shadow: 0 4px 10px rgb(0 0 0 / 5%);
 }
 
-.bt-meun {
+#bt-meun {
   display: flex;
   flex-flow: column;
   justify-content: center;
   margin-left: 1%;
   cursor: pointer;
+}
+
+#bt2-menu {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  position: fixed;
+  height: 40px;
+  width: 40px;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 5px rgb(0 0 0 / 5%);
+  bottom: 10%;
+  right: 30px;
+  cursor: pointer;
+  transition: 0.5s ease;
+}
+
+#bt2-menu svg {
+  margin-left: 5px;
+}
+
+#bt2-menu:hover {
+  background-color: whitesmoke;
+  box-shadow: 0 3px 3px -2px rgba(0, 0, 0, .2), 0 3px 4px 0 rgba(0, 0, 0, .14), 0 1px 8px 0 rgba(0, 0, 0, .12)!important;
 }
 
 #githubLink {

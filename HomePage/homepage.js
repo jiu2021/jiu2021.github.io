@@ -7,6 +7,7 @@ var app = new Vue({
   },
 
   mounted: function() {
+    alert("中秋节快乐！")
     if (document.body.offsetWidth <= 500)
       this.isMobile = !this.isMobile;
   },

@@ -17,7 +17,7 @@
     <!--内容-->
     <div id="page">
       <div id="header">
-        <div class="bt-meun" @click="showMenu()">
+        <div id="bt-meun" @click="showMenu()">
           <svg t="1632043235633" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5829" width="40" height="40">
               <path
                 d="M142.622701 222.211956h128.317443V354.922124H142.622701zM342.103385 222.211956h568.977193V354.922124h-568.977193zM342.103385 462.493331h568.977193v132.710169h-568.977193zM342.103385 695.342113h568.977193v132.711975h-568.977193zM142.622701 462.493331h128.317443v132.710169H142.622701zM142.622701 695.342113h128.317443v132.711975H142.622701z"
@@ -54,7 +54,7 @@
               <div class="tagName">非技术</div>
             </div>
             <div class="read">
-              <div class="getRead">READ MORE</div>
+              <a href="marked.html" class="getRead">READ MORE</a>
               <div class="writeTime">2021-9-19</div>
             </div>
           </div>
@@ -63,7 +63,7 @@
           <div class="programs">
             <div class="programTitle">To do list</div>
             <div class="instruction">
-              一个轻量化的Web应用。添加待办事项，帮助您更高效地完成工作。
+              一个轻量化的Web应用。添加待办事项，帮助您更高效地完成工作。（PC端体验更佳）
             </div>
             <div class="read">
               <div class="getTry">
@@ -108,7 +108,7 @@
         </div>
       </div>
       <!--导航-->
-      <div id="menu" :class="{mobile :isMobile}" >
+    <div id="menu" :class="{mobile :isMobile}" >
               <div id="menuTitle">Navigation</div>
               <div id="idCard">
                 <div id="bigPortrait">
@@ -151,7 +151,10 @@
                   <li @click="getBack()">←back</li>
                 </ul>
               </div>
-      </div>
+    </div>
+    <div id="bt2-menu" @click="showMenu()">
+      <svg t="1632192306406" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2448" width="30" height="30"><path d="M128 192h768v128H128V192z m0 256h768v128H128v-128z m0 256h768v128H128v-128z" p-id="2449"></path></svg>
+    </div>
     </div>
   </div>
 
