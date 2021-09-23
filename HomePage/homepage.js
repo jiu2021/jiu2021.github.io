@@ -6,7 +6,6 @@ var app = new Vue({
     isShowMenu: false,
     isMobile: false,
     showTag: "全部",
-    isDelayShowTag: "全部",
   },
 
   mounted: function() {
@@ -83,11 +82,5 @@ var app = new Vue({
         this.isDelayshow = whichPage;
       }, 500)
     },
-
-    delayShowTag: function(whichTag) {
-      setTimeout(() => {
-        this.isDelayShowTag = whichTag;
-      }, 500)
-    }
   }
 })
