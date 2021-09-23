@@ -2,9 +2,11 @@ var app = new Vue({
   el: "#app",
   data: {
     showPage: "blogPage",
+    isDelayshow: "blogPage",
     isShowMenu: false,
     isMobile: false,
     showTag: "全部",
+    isDelayShowTag: "全部",
   },
 
   mounted: function() {
@@ -32,7 +34,6 @@ var app = new Vue({
           menuBar.style.left = '-50%';
         }
       }
-
     },
 
     getBack: function() {
@@ -45,8 +46,8 @@ var app = new Vue({
       } else {
         menuBar.style.left = '-50%';
       }
-
     },
+
     Tip: function() {
       alert(' Thank you for your support!This page will be online soon!');
     },
@@ -74,7 +75,19 @@ var app = new Vue({
         xmlhttp.send();
       }
       this.showPage = "readMorePage";
-    }
+      this.delayShow("readMorePage")
+    },
 
+    delayShow: function(whichPage) {
+      setTimeout(() => {
+        this.isDelayshow = whichPage;
+      }, 500)
+    },
+
+    delayShowTag: function(whichTag) {
+      setTimeout(() => {
+        this.isDelayShowTag = whichTag;
+      }, 500)
+    }
   }
 })

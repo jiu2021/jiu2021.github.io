@@ -41,24 +41,24 @@
         </div>
       </div>
       <div id="main">
-        <div id="blogRead" v-show="showPage == 'readMorePage'">
+        <div id="blogRead" v-show="'readMorePage' == isDelayshow" :class="{disappear:showPage != 'readMorePage'}">
         </div>
-        <div id="blogPage" v-show="showPage == 'blogPage'">
+        <div id="blogPage" v-show="'blogPage' == isDelayshow" :class="{disappear:showPage != 'blogPage'}">
           <div id="tags">
-            <div class="tag" @click="showTag = '非技术'">
+            <div class="tag" @click="showTag = '全部',delayShowTag('全部')">
+              <div class="tagName">全部</div>
+              <div class="tagNum">|2</div>
+            </div>
+            <div class="tag" @click="showTag = '技术',delayShowTag('技术')">
+              <div class="tagName">技术</div>
+              <div class="tagNum">|1</div>
+            </div>
+            <div class="tag" @click="showTag = '非技术',delayShowTag('非技术')">
               <div class="tagName">非技术</div>
               <div class="tagNum">|1</div>
             </div>
-            <div class="tag">
-              <div class="tagName" @click="showTag = '技术'">技术</div>
-              <div class="tagNum">|1</div>
-            </div>
-            <div class="tag">
-              <div class="tagName" @click="showTag = '全部'">全部</div>
-              <div class="tagNum">|2</div>
-            </div>
           </div>
-          <div class="blogs" v-show="showTag =='非技术'||showTag =='全部'">
+          <div class="blogs" v-show="isDelayShowTag =='非技术'||showTag =='全部'" :class="{disappear:showTag !='非技术' && showTag !='全部'}">
             <div class="blogTitle">First-blog</div>
             <div class="tagsName">
               <div class="tagName">非技术</div>
@@ -68,7 +68,7 @@
               <div class="writeTime">2021-9-19</div>
             </div>
           </div>
-          <div class="blogs" v-show="showTag =='技术'||showTag =='全部'">
+          <div class="blogs" v-show="isDelayShowTag =='技术'||showTag =='全部'" :class="{disappear:showTag !='技术' && showTag !='全部'}">
             <div class="blogTitle">Git-notes</div>
             <div class="tagsName">
               <div class="tagName">技术</div>
@@ -79,7 +79,7 @@
             </div>
           </div>
         </div>
-        <div id="programPage" v-show="showPage == 'programPage'">
+        <div id="programPage" v-show="'programPage' == isDelayshow" :class="{disappear:showPage != 'programPage'}">
           <div class="programs">
             <div class="programTitle">To do list</div>
             <div class="instruction">
@@ -120,7 +120,7 @@
             </div>
       </div>
         </div>
-        <div id="footer">
+      <div id="footer">
            <!-- <div id="stationLife">本站存活时间</div>-->
             <div id="copyright">Station owner@Kai jian ©</div>
             <div id="powered">Powered by github pages</div>
@@ -164,8 +164,8 @@
               </div>
               <div id="menuList">
                 <ul>
-                  <li @click="showPage = 'blogPage',getBack()">blogs</li>
-                  <li @click="showPage = 'programPage',getBack()">programs</li>
+                  <li @click="showPage = 'blogPage',getBack(),delayShow('blogPage')">blogs</li>
+                  <li @click="showPage = 'programPage',getBack(),delayShow('programPage')">programs</li>
                   <li @click="Tip()">coming soon</li>
                   <li @click="getBack()">←back</li>
                 </ul>
