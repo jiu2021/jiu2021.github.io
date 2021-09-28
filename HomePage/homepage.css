@@ -46,6 +46,7 @@ ul {
   line-height: 65px;
   color: black;
   box-shadow: 0 4px 10px rgb(0 0 0 / 5%);
+  transition: 0.5s ease;
 }
 
 #bt-meun {
@@ -135,7 +136,6 @@ ul {
   height: 100%;
   margin: 0 auto;
   transition: 0.5s ease-out;
-  opacity: 1;
 }
 
 
@@ -219,7 +219,6 @@ ul {
   height: 100%;
   margin: 20px auto;
   transition: 0.5s ease-out;
-  opacity: 1;
 }
 
 .programs {
@@ -359,9 +358,21 @@ ul {
   overflow: scroll;
 }
 
-.disappear {
-  opacity: 0 !important;
-  pointer-events: none;
+
+/*vue.js过渡*/
+
+.slide-fade-enter-active {
+  transition: all .3s ease;
+}
+
+.slide-fade-leave-active {
+  transition: all .5s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+
+.slide-fade-enter,
+.slide-fade-leave-to {
+  transform: translateY(10px);
+  opacity: 0;
 }
 
 @media screen and (max-width: 500px) {
