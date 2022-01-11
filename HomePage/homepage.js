@@ -62,9 +62,9 @@ var app = new Vue({
       }
       xmlhttp.onreadystatechange = function() {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-          document.getElementById("blogRead").innerHTML = marked(
-            xmlhttp.responseText
-          );
+          var md = window.markdownit();
+          var result = md.render(xmlhttp.responseText);
+          document.getElementById("blogRead").innerHTML = result;
         }
       };
       // 向服务器发送请求
