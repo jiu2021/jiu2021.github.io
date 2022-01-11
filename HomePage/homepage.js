@@ -63,6 +63,7 @@ var app = new Vue({
       xmlhttp.onreadystatechange = function() {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
           var md = window.markdownit();
+          console.log(xmlhttp.responseText);
           var result = md.render(xmlhttp.responseText);
           document.getElementById("blogRead").innerHTML = result;
         }
