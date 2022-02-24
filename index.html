@@ -1,1 +1,101 @@
-<!DOCTYPE html><html lang=""><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="/favicon.ico"><link rel="stylesheet" href="/css/reset.css"><link rel="stylesheet" href="/css/base.css"><link rel="stylesheet" href="https://at.alicdn.com/t/font_3196193_z7bpxvn86a.css"><title>app</title><link href="/css/chunk-vendors.89351346.css" rel="preload" as="style"><link href="/css/index.c650472f.css" rel="preload" as="style"><link href="/js/chunk-vendors.a14e786e.js" rel="preload" as="script"><link href="/js/index.9ae2e6c3.js" rel="preload" as="script"><link href="/css/chunk-vendors.89351346.css" rel="stylesheet"><link href="/css/index.c650472f.css" rel="stylesheet"></head><body><div id="app"></div><script src="/js/chunk-vendors.a14e786e.js"></script><script src="/js/index.9ae2e6c3.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pages for KJ</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    
+    #homepage {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      opacity: 0.8;
+      background: url(./indexImages/background.jpg) no-repeat 100%;
+    }
+    
+    #window {
+      display: flex;
+      flex-flow: column;
+      width: 40%;
+      height: 30%;
+      background-color: white;
+      margin: 15% auto;
+      border-radius: 10px;
+      opacity: 0.8;
+    }
+    
+    #window span {
+      margin: 30px auto;
+      font-size: 50px;
+      color: black;
+    }
+    
+    #window a {
+      cursor: pointer;
+      text-decoration: none;
+      font-size: 40px;
+      margin: 30px auto;
+      border: black solid 2px;
+      border-radius: 5px;
+      color: black;
+    }
+    
+    #dot {
+      margin-top: 0;
+    }
+    
+    @media screen and (max-width: 500px) {
+      #window {
+        height: 20%;
+        width: 350px;
+        margin: 30% auto;
+      }
+      #window a,
+      #window span {
+        font-size: 25px !important;
+      }
+      #homepage {
+        width: 100%;
+        height: 960px;
+        background: url(./indexImages/backgroundMobile.jpg) no-repeat center top;
+        background-size: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="homepage">
+    <div id="window">
+      <span>Welcome to my page!</span>
+      <a href="HomePage/homepage.html">Click here to continue
+          <span id="dot">.</span>
+        </a>
+    </div>
+  </div>
+  <script>
+    window.onload = function() {
+      alert("你又来看我啦！");
+      setInterval(() => {
+        var dot = document.getElementById("dot");
+        if (dot.innerHTML == ".") {
+          dot.innerHTML = "..";
+        } else if (dot.innerHTML == "..") {
+          dot.innerHTML = "...";
+        } else if (dot.innerHTML == "...") {
+          dot.innerHTML = ".";
+        }
+      }, 500);
+    };
+  </script>
+</body>
+
+</html>
